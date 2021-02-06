@@ -34,7 +34,6 @@ def take_command():
         with sr.Microphone() as source:
             print('listening...')
             engine.runAndWait()
-            #listener.energy_threshold = 4000
             listener.pause_threshold = 1
             voice = listener.listen(source)
             command = listener.recognize_google(voice)
@@ -64,8 +63,6 @@ def run_alexa():
         print(info)
         talk('According to wikipedia...')
         talk(info)
-    #elif 'date' in command:
-        #talk('sorry boss, I am not interested')
     elif 'are you single' in command:
         talk('Sorry boss, i am in a relationship with wifi')
     elif 'joke' in command:
